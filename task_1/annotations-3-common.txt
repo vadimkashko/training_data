@@ -1,0 +1,14 @@
+ Parameter             |                                 Value                                   
+-----------------------+------------------------------------------------------------------------
+ Images                |                                  2399                                   
+ Annotated images      |                                  637                                    
+ Not annotated images  |                                  1762                                   
+ Figures               |                                  1129                                   
+ Largest images        |                                  2399                                   
+ Largest image         | ftp/roger2/OK1/2_(2022-03-09_16'00'11_-_2022-03-09_18'00'11)_93600.jpg  
+ Largest image height  |                                  800                                    
+ Largest image width   |                                  5200                                   
+ Smallest images       |                                  2399                                   
+ Smallest image        | ftp/roger2/OK1/2_(2022-03-09_16'00'11_-_2022-03-09_18'00'11)_93600.jpg  
+ Smallest image height |                                  800                                    
+ Smallest image width  |                                  5200                                   
