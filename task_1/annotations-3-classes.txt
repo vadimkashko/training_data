@@ -1,4 +1,0 @@
- Class name | Quantity  
-------------+----------
- vagon      |   939     
- grab       |   190     

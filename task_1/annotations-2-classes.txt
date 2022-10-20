@@ -1,5 +1,0 @@
- Class name | Quantity  
-------------+----------
- ignore     |   543     
- item       |    63     
- fur        |    34     
