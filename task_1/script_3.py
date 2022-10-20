@@ -72,8 +72,9 @@ def get_figures(tree: ET.ElementTree) -> list[str]:
     Returns:
         list[str]: list of figures.
     """
+    root = tree.getroot()
     figures = []
-    for image in tree.iter('image'):
+    for image in root.iter('image'):
         for tag in image.iterfind('*'):
             figures.append(tag.tag)
     return figures
