@@ -1,0 +1,14 @@
+ Parameter             |                                   Value                                     
+-----------------------+----------------------------------------------------------------------------
+ Images                |                                    1000                                     
+ Annotated images      |                                    133                                      
+ Not annotated images  |                                    867                                      
+ Figures               |                                    232                                      
+ Largest images        |                                    900                                      
+ Largest image         | ftp/RD/1000_samples/fb783e93-ab1b-4869-bd57-349905cfb74b_1647585888280.jpg  
+ Largest image height  |                                    1206                                     
+ Largest image width   |                                    1920                                     
+ Smallest images       |                                    100                                      
+ Smallest image        | ftp/RD/1000_samples/fb783e93-ab1b-4869-bd57-349905cfb74b_5450723208171.jpg  
+ Smallest image height |                                    804                                      
+ Smallest image width  |                                    1280                                     
