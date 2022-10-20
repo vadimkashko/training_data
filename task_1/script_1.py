@@ -41,7 +41,8 @@ def get_files() -> list[Path]:
     return files
 
 
-def create_table(rows: list[list], params: dict[str, str]) -> pt.PrettyTable:
+def create_table(rows: list[list[str]],
+                 params: dict[str, str]) -> pt.PrettyTable:
     """Return PrettyTable object filled with data.
 
     Args:
@@ -168,6 +169,7 @@ if __name__ == '__main__':
             smallest_images = get_extreme_images(images, min)
             largest_images_number = len(largest_images)
             smallest_images_number = len(smallest_images)
+
             rows.extend(
                 [['Largest images', largest_images_number],
                  ['Largest image', largest_images[0].get("name")],
@@ -177,7 +179,6 @@ if __name__ == '__main__':
                  ['Smallest image', smallest_images[0].get("name")],
                  ['Smallest image height', smallest_images[0].get("height")],
                  ['Smallest image width', smallest_images[0].get("width")]])
-
             table = create_table(rows, TABLE_PARAMS)
             file_info = table.get_string()
 
