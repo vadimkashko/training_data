@@ -111,7 +111,9 @@ if __name__ == '__main__':
             table = create_table(rows, TABLE_PARAMS)
             file_info = table.get_string()
 
-            with open(f'{file.stem}-figures.txt', 'w') as out_file:
+            path = Path(f'{file.stem}')
+            path.mkdir(exist_ok=True)
+            with open(f'{path}/figures.txt', 'w') as out_file:
                 out_file.write(file_info)
     finally:
         print('Script is stopped!')

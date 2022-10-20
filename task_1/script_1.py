@@ -41,8 +41,11 @@ def get_files() -> list[Path]:
     return files
 
 
-def create_table(rows: list[list[str]],
-                 params: dict[str, str]) -> pt.PrettyTable:
+
+
+
+def create_table(rows: list[list[str]], params: dict[str,
+                                                     str]) -> pt.PrettyTable:
     """Return PrettyTable object filled with data.
 
     Args:
@@ -183,7 +186,9 @@ if __name__ == '__main__':
             table = create_table(rows, TABLE_PARAMS)
             file_info = table.get_string()
 
-            with open(f'{file.stem}-common.txt', 'w') as out_file:
+            path = Path(f'{file.stem}')
+            path.mkdir(exist_ok=True)
+            with open(f'{path}/common.txt', 'w') as out_file:
                 out_file.write(file_info)
     finally:
         print('Script is stopped!')
