@@ -41,9 +41,6 @@ def get_files() -> list[Path]:
     return files
 
 
-
-
-
 def create_table(rows: list[list[str]], params: dict[str,
                                                      str]) -> pt.PrettyTable:
     """Return PrettyTable object filled with data.
