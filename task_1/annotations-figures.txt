@@ -1,0 +1,3 @@
+ Figure type | Quantity  
+-------------+----------
+ box         |   232     
