@@ -71,7 +71,8 @@ def get_images(tree: ET.ElementTree) -> list[ET.Element]:
     Returns:
         list[ET.Element]: list of <image> elements.
     """
-    images = tree.findall('image')
+    root = tree.getroot()
+    images = root.findall('image')
     return images
 
 
