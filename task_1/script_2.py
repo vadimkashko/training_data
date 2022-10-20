@@ -73,8 +73,9 @@ def get_classes(tree: ET.ElementTree) -> list[str]:
     Returns:
         list[str]: list of classes.
     """
+    root = tree.getroot()
     classes = []
-    for image in tree.iter('image'):
+    for image in root.iter('image'):
         for tag in image.iterfind('*'):
             classes.append(tag.get('label'))
     return classes
