@@ -8,7 +8,7 @@ from sys import argv
 import prettytable as pt
 
 # Dictionary with column names and align types for table
-TABLE_PARAMS = {'Figure type': 'l', 'Quantity': 'x'}
+TABLE_PARAMS = {'Shape type': 'l', 'Quantity': 'x'}
 
 
 def get_files() -> list[Path]:
@@ -63,33 +63,33 @@ def create_table(rows: list[tuple[str, int]],
     return table
 
 
-def get_figures(tree: ET.ElementTree) -> list[str]:
-    """Return all subelement tags (figures) of <image> tags.
+def get_shapes(tree: ET.ElementTree) -> list[str]:
+    """Return all subelement tags (shapes) of <image> tags.
 
     Args:
         tree (ET.ElementTree): xml tree.
 
     Returns:
-        list[str]: list of figures.
+        list[str]: list of shapes.
     """
     root = tree.getroot()
-    figures = []
+    shapes = []
     for image in root.iter('image'):
         for tag in image.iterfind('*'):
-            figures.append(tag.tag)
-    return figures
+            shapes.append(tag.tag)
+    return shapes
 
 
-def count_figures(figures: list[str]) -> list[tuple[str, int]]:
-    """Return list of tuples with figure's types and quantity for table's rows.
+def count_shapes(shapes: list[str]) -> list[tuple[str, int]]:
+    """Return list of tuples with shape's types and quantity for table's rows.
 
     Args:
-        figures (list[str]): list of figures.
+        shapes (list[str]): list of shapes.
 
     Returns:
         list[tuple[str, int]]: list of rows.
     """
-    counter = Counter(figures)
+    counter = Counter(shapes)
     rows = counter.most_common()
     return rows
 
@@ -105,15 +105,15 @@ if __name__ == '__main__':
         for file in files:
             tree = ET.parse(file)
 
-            figures = get_figures(tree)
+            shapes = get_shapes(tree)
 
-            rows = count_figures(figures)
+            rows = count_shapes(shapes)
             table = create_table(rows, TABLE_PARAMS)
             file_info = table.get_string()
 
             dir_name = Path(f'{file.stem}')
             dir_name.mkdir(exist_ok=True)
-            with open(f'{dir_name}/figures.txt', 'w') as out_file:
+            with open(f'{dir_name}/shapes.txt', 'w') as out_file:
                 out_file.write(file_info)
     finally:
         print('Script is stopped!')

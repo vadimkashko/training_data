@@ -89,7 +89,7 @@ def get_annotated_images(images: list[ET.Element]) -> list[ET.Element]:
     return annotated_images
 
 
-def get_figures(images: list[ET.Element]) -> list[ET.Element]:
+def get_shapes(images: list[ET.Element]) -> list[ET.Element]:
     """Return list of subelements from all elements.
 
     Args:
@@ -98,10 +98,10 @@ def get_figures(images: list[ET.Element]) -> list[ET.Element]:
     Returns:
         list[ET.Element]: list of <image> elements.
     """
-    figures = []
+    shapes = []
     for image in images:
-        figures.extend(image.iterfind('*'))
-    return figures
+        shapes.extend(image.iterfind('*'))
+    return shapes
 
 
 def get_image_size(image: ET.Element) -> int:
@@ -162,9 +162,9 @@ if __name__ == '__main__':
             rows.append(['Annotated images', annotated_images_number])
             rows.append(['Not annotated images', not_annotated_images_number])
 
-            figures = get_figures(annotated_images)
-            figures_number = len(figures)
-            rows.append(['Figures', figures_number])
+            shapes = get_shapes(annotated_images)
+            shapes_number = len(shapes)
+            rows.append(['shapes', shapes_number])
 
             largest_images = get_extreme_images(images, max)
             smallest_images = get_extreme_images(images, min)
