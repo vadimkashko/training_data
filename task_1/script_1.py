@@ -183,9 +183,9 @@ if __name__ == '__main__':
             table = create_table(rows, TABLE_PARAMS)
             file_info = table.get_string()
 
-            path = Path(f'{file.stem}')
-            path.mkdir(exist_ok=True)
-            with open(f'{path}/common.txt', 'w') as out_file:
+            dir_name = Path(f'{file.stem}')
+            dir_name.mkdir(exist_ok=True)
+            with open(f'{dir_name}/common.txt', 'w') as out_file:
                 out_file.write(file_info)
     finally:
         print('Script is stopped!')
